@@ -1,0 +1,992 @@
+// if you hate on my code you are
+// automatically agreeing to be homosexual
+
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Net;
+
+namespace PROJEKAT
+{
+    public partial class Form5 : Form
+    {
+        public Color themecolor = ColorTranslator.FromHtml("#1A1A1B");
+        public Color themecolor2 = ColorTranslator.FromHtml("#90EE90"); //90EE90
+        public string theme = "green";
+        public Form5()
+        {
+            InitializeComponent();
+            
+            label1.ForeColor = themecolor2;
+            button1.ForeColor = themecolor2;
+            button2.ForeColor = themecolor2;
+            button3.ForeColor = themecolor2;
+            button4.ForeColor = themecolor2;
+            button5.ForeColor = themecolor2;
+            button6.ForeColor = themecolor2;
+            button7.ForeColor = themecolor2;
+            button8.ForeColor = themecolor2;
+            button9.ForeColor = themecolor2;
+            try
+            {
+                WebClient webclient = new WebClient();
+                if(!webclient.DownloadString("https://pastebin.com/raw/2FyNL0nR").Contains("1.1"))
+                {
+                    if(MessageBox.Show("There is a new version available, do you want to download it?", "Zarp Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        System.Diagnostics.Process.Start("https://github.com/hopachayold/zarpmenu/");
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+            button1.BringToFront();
+            this.BackColor = themecolor;
+            panel1.BackColor = ColorTranslator.FromHtml("#111111");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 forma = new Form1();
+            forma.ShowDialog();
+        }
+        private void Form5_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.zarpgaming.com");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.steamcommunity.com/id/codabro");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form6 forma = new Form6();
+            forma.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form7 forma = new Form7();
+            forma.ShowDialog();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Form4 forma = new Form4();
+            forma.ShowDialog();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form8 forma = new Form8();
+            forma.ShowDialog();
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Form4 forma = new Form4();
+            forma.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://pastebin.com/raw/xftNbm99");
+        }
+    }
+	public partial class Form1 : Form
+    { 
+
+
+        private List<Printer> printers;
+        public List<Printer> selectedPrinters;
+        private string path;
+        public Form1()
+        {
+            InitializeComponent();
+            Form5 frm = (Form5)Application.OpenForms["Form5"];
+            button1.ForeColor = frm.themecolor2;
+            button2.ForeColor = frm.themecolor2;
+            button3.ForeColor = frm.themecolor2;
+            button4.ForeColor = frm.themecolor2;
+            button5.ForeColor = frm.themecolor2;
+            label1.ForeColor = frm.themecolor2;
+            label2.ForeColor = frm.themecolor2;
+            label3.ForeColor = frm.themecolor2;
+            LIST1.ForeColor = frm.themecolor2;
+            LIST2.ForeColor = frm.themecolor2;
+            radioButton1.ForeColor = frm.themecolor2;
+            radioButton2.ForeColor = frm.themecolor2;
+            radioButton3.ForeColor = frm.themecolor2;
+            radioButton4.ForeColor = frm.themecolor2;
+            radioButton5.ForeColor = frm.themecolor2;
+            if (frm.theme == "green")
+            {
+                pictureBox1.Image = Image.FromFile("xx.png");
+            }
+            else if (frm.theme == "bb00bb")
+            {
+                pictureBox1.Image = Image.FromFile("x_bb00bb.png");
+            }
+            panel1.BackColor = ColorTranslator.FromHtml("#111111");
+            LIST1.BackColor = ColorTranslator.FromHtml("#161616");
+            LIST2.BackColor = ColorTranslator.FromHtml("#161616");
+            Form5 forma = (Form5)Application.OpenForms["Form5"];
+            this.BackColor = forma.themecolor;
+            path = AppDomain.CurrentDomain.BaseDirectory + "\\combinations\\";
+            printers = new List<Printer>();
+            selectedPrinters = new List<Printer>();
+            printers.Add(new Printer(18000, 1, "Topaz Printer"));
+            printers.Add(new Printer(27000, 1, "Amethyst Printer"));
+            printers.Add(new Printer(45000, 1, "Emerald Printer"));
+            printers.Add(new Printer(135000, 1, "Sapphire Printer"));
+            printers.Add(new Printer(36000, 1, "Normal Printer"));
+            printers.Add(new Printer(72000, 1, "Ruby Printer"));
+            printers.Add(new Printer(144000, 1, "Gold Printer"));
+            printers.Add(new Printer(324000, 1, "Nuclear Printer"));
+            printers.Add(new Printer(720000, 1, "Diamond Printer"));
+            printers.Add(new Printer(1200000, 1, "Black Diamond Printer"));
+            printers.Add(new Printer(1800000, 1, "Gencorp Printer"));
+            printers.Add(new Printer(1800000, 1, "Festive Printer"));
+            printers.Add(new Printer(2250000, 1, "Iridium Printer"));
+            printers.Add(new Printer(2400000, 1, "Magik Printer"));
+            printers.Add(new Printer(2700000, 1, "Golden Plated Printer"));
+            printers.Add(new Printer(2700000, 1, "Ice Printer"));
+            printers.Add(new Printer(2700000, 1, "Skull Printer"));
+            printers.Add(new Printer(2772000, 1, "XMAS Printer"));
+            printers.Add(new Printer(2880000, 1, "Summer Printer"));
+            printers.Add(new Printer(2889000, 1, "Hell Printer"));
+            printers.Add(new Printer(2520000, 1, "Santa Printer"));
+            foreach (Printer printer in printers)
+            {
+                LIST1.Items.Add(printer.getName());
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+        [Serializable]
+        public class Printer
+        {
+            private int rate;
+            private int boost;
+            private string name;
+            public Printer()
+            {
+                this.rate = 0;
+                this.boost = 1;
+                this.name = "Default printer";            }
+            public Printer(int rate, int boost, string name)
+            {
+                this.rate = rate;
+                this.boost = boost;
+                this.name = name;
+            }
+            public Printer(Printer from, int boost)
+            {
+                this.rate = from.rate;
+                this.boost = boost;
+                this.name = from.name;
+            }
+            public string getName()
+            {
+                return name;
+            }
+            public int getRate()
+            {
+                return rate;
+            }
+            public int getBoost()
+            {
+                return boost;
+            }
+            public string getBoostString()
+            {
+                return boost.ToString();
+            }
+                public void setBoost(int newBoost)
+            {
+                boost = newBoost;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int boostSelected = 0;
+            if (radioButton1.Checked) boostSelected = 1;
+            if (radioButton2.Checked) boostSelected = 2;
+            if (radioButton3.Checked) boostSelected = 3;
+            if (radioButton4.Checked) boostSelected = 4;
+            if (radioButton5.Checked) boostSelected = 5;
+            try
+            {
+                selectedPrinters.Add(new Printer(printers.ElementAt(LIST1.SelectedIndex), boostSelected));
+                LIST2.Items.Add(selectedPrinters.Last().getName() + " x" + selectedPrinters.Last().getBoostString());
+                button3.Enabled = true;
+            }
+            catch(Exception)
+            {
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                selectedPrinters.Remove(selectedPrinters.ElementAt(LIST2.SelectedIndex));
+                int sel = LIST2.SelectedIndex;
+                if (sel == LIST2.Items.Count - 1)
+                    sel--;
+                LIST2.Items.RemoveAt(LIST2.SelectedIndex);
+                if (LIST2.Items.Count == 0) button3.Enabled = false;
+                LIST2.SetSelected(sel,true);
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int totalrate = 0;
+            foreach (Printer printer in selectedPrinters)
+            {
+                totalrate += printer.getRate() * printer.getBoost(); 
+            }
+            string x = totalrate.ToString("n0");
+            MessageBox.Show("$" + x, "Hourly Rate");
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form2 forma = new Form2(selectedPrinters, path);
+            forma.ShowDialog();
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form3 forma = new Form3(path, this);
+            forma.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form4 forma = new Form4();
+            forma.ShowDialog();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Made by Huperchild.", "Info");
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+	public partial class Form2 : Form
+    {
+        private List<Form1.Printer> printersToSave;
+        private string path;
+        public Form2(List<Form1.Printer> printers, string path)
+        {
+            InitializeComponent();
+            this.printersToSave = printers;
+            this.path = path;
+            Form5 forma = (Form5)Application.OpenForms["Form5"];
+            this.BackColor = forma.themecolor;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+        public static byte[] ObjectToByteArray(Object obj)
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            using (var ms = new MemoryStream())
+            {
+                bf.Serialize(ms, obj);
+                return ms.ToArray();
+            }
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string filename = textBox1.Text + ".zarp";
+            FileStream stream = new FileStream(path + filename, FileMode.OpenOrCreate);
+            BinaryWriter writer = new BinaryWriter(stream);
+            writer.Write(ObjectToByteArray(printersToSave));
+            stream.Close();
+            this.Dispose();
+        }
+    }
+	public partial class Form3 : Form
+    {
+        private List<Form1.Printer> printersOutput;
+        private string path;
+        private Form1 f;
+        public Form3(string path, Form1 f)
+        {
+            InitializeComponent();
+            Form5 forma = (Form5)Application.OpenForms["Form5"];
+            this.BackColor = forma.themecolor;
+            this.path = path;
+            string[] files = Directory.GetFiles(path, "*.zarp");
+            this.f = f;
+            foreach (string file in files)
+            {
+                string[] words = file.Split('\\');
+                string name = words[words.Length - 1].Split('.')[0];
+                listBox1.Items.Add(name);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string filename = path + listBox1.SelectedItem + ".zarp";
+            FileStream stream = new FileStream(filename, FileMode.Open);
+            BinaryReader reader = new BinaryReader(stream);
+            printersOutput = (List<Form1.Printer>)ByteArrayToObject(reader.ReadBytes(100000));
+            stream.Close();
+            f.selectedPrinters = printersOutput;
+            f.LIST2.Items.Clear();
+            foreach (Form1.Printer printer in f.selectedPrinters)
+            {
+                f.LIST2.Items.Add(printer.getName() + " x" + printer.getBoostString());
+            }
+            
+            this.Dispose();
+        }
+
+        public static object ByteArrayToObject(byte[] arrBytes)
+        {
+            using (var memStream = new MemoryStream())
+            {
+                var binForm = new BinaryFormatter();
+                memStream.Write(arrBytes, 0, arrBytes.Length);
+                memStream.Seek(0, SeekOrigin.Begin);
+                var obj = binForm.Deserialize(memStream);
+                return obj;
+            }
+        }
+    }
+	 public partial class Form4 : Form
+    {
+        int themechoice;
+        public Form4()
+        {
+            InitializeComponent();
+            panel3.BackColor = ColorTranslator.FromHtml("#111111");
+            Form5 forma = (Form5)Application.OpenForms["Form5"];
+            button2.ForeColor = forma.themecolor2;
+            label1.ForeColor = forma.themecolor2;
+            label2.ForeColor = forma.themecolor2;
+            if (forma.theme == "green")
+            {
+                pictureBox4.Image = Image.FromFile("xx.png");
+            }
+            else if (forma.theme == "bb00bb")
+            {
+                pictureBox4.Image = Image.FromFile("x_bb00bb.png");
+            }
+                this.BackColor = forma.themecolor;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            themechoice = 0;
+            panel2.Visible = false;
+            panel1.Visible = true;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            themechoice = 1;
+            panel2.Visible = true;
+            panel1.Visible = false;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Form5 frm = (Form5)Application.OpenForms["Form5"];
+            Color boja = Color.Red;
+            if(themechoice == 1)
+            {
+                boja = ColorTranslator.FromHtml("#bb00bb");
+                frm.pictureBox1.Image = Image.FromFile("logo_bb00bb.png");
+                frm.pictureBox2.Image = Image.FromFile("minimize_bb00bb.png");
+                frm.pictureBox3.Image = Image.FromFile("x_bb00bb.png");
+                frm.theme = "bb00bb";
+            }
+            else if (themechoice == 0)
+            {
+                boja = ColorTranslator.FromHtml("#90EE90");
+                frm.pictureBox1.Image = Image.FromFile("2018-Full.png");
+                frm.pictureBox2.Image = Image.FromFile("minimize.png");
+                frm.pictureBox3.Image = Image.FromFile("xx.png");
+                frm.theme = "green";
+            }
+            frm.themecolor2 = boja;
+            frm.button1.ForeColor = boja;
+            frm.button2.ForeColor = boja;
+            frm.button3.ForeColor = boja;
+            frm.button4.ForeColor = boja;
+            frm.button5.ForeColor = boja;
+            frm.button6.ForeColor = boja;
+            frm.button7.ForeColor = boja;
+            frm.button9.ForeColor = boja;
+            frm.label1.ForeColor = boja;
+            
+            this.Dispose();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+    }
+	public partial class Form6 : Form
+    {
+        public Form6()
+        {
+            InitializeComponent();
+            Form5 frm = (Form5)Application.OpenForms["Form5"];
+            button1.ForeColor = frm.themecolor2;
+            button2.ForeColor = frm.themecolor2;
+            button3.ForeColor = frm.themecolor2;
+            button4.ForeColor = frm.themecolor2;
+            button5.ForeColor = frm.themecolor2;
+            button6.ForeColor = frm.themecolor2;
+            button7.ForeColor = frm.themecolor2;
+            button8.ForeColor = frm.themecolor2;
+            button9.ForeColor = frm.themecolor2;
+            button10.ForeColor = frm.themecolor2;
+            button11.ForeColor = frm.themecolor2;
+            label1.ForeColor = frm.themecolor2;
+            label2.ForeColor = frm.themecolor2;
+            label3.ForeColor = frm.themecolor2;
+            label4.ForeColor = frm.themecolor2;
+            label5.ForeColor = frm.themecolor2;
+            label6.ForeColor = frm.themecolor2;
+            label7.ForeColor = frm.themecolor2;
+            label8.ForeColor = frm.themecolor2;
+            label9.ForeColor = frm.themecolor2;
+            if(frm.theme == "green")
+            {
+                pictureBox3.Image = Image.FromFile("xx.png");
+            }
+            else if(frm.theme == "bb00bb")
+            {
+                pictureBox3.Image = Image.FromFile("x_bb00bb.png");
+            }
+            panel1.BackColor = ColorTranslator.FromHtml("#111111");
+            button1.BringToFront();
+            Form5 forma = (Form5)Application.OpenForms["Form5"];
+            this.BackColor = forma.themecolor;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("steam://connect/darkrp.zarpgaming.com:27015");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("steam://connect/usa.zarpgaming.com:27015");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("steam://connect/play.zarpgaming.com:27035");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("steam://connect/play.zarpgaming.com:27019");
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("steam://connect/play.zarpgaming.com:27030");
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("steam://connect/play.zarpgaming.com:27040");
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("ts3server://ts.zarpgaming.com:9987/");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("steam://connect/play.zarpgaming.com:27017");
+        }
+        private void button8_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://discordapp.com/invite/AYeSSeb");
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+	public partial class Form7 : Form
+    {
+        public Form7()
+        {
+            InitializeComponent();
+            Form5 frm = (Form5)Application.OpenForms["Form5"];
+            button1.ForeColor = frm.themecolor2;
+            button2.ForeColor = frm.themecolor2;
+            label1.ForeColor = frm.themecolor2;
+            label2.ForeColor = frm.themecolor2;
+            label3.ForeColor = frm.themecolor2;
+            if (frm.theme == "green")
+            {
+                pictureBox3.Image = Image.FromFile("xx.png");
+            }
+            else if(frm.theme == "bb00bb")
+            {
+                pictureBox3.Image = Image.FromFile("x_bb00bb.png");
+            }
+            panel1.BackColor = ColorTranslator.FromHtml("#111111");
+            Form5 forma = (Form5)Application.OpenForms["Form5"];
+            this.BackColor = forma.themecolor;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Process.Start("NI64.exe");
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Process.Start("NI.exe");
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+	public partial class Form8 : Form
+    {
+        string[] numpad = { "home", "pgup", "del", "end", "pgdn", "kp_end", "kp_downarrow", "kp_pgdn", "kp_leftarrow", "kp_5", "kp_rightarrow", "kp_home", "kp_up", "kp_pgup" };
+        string[] Keys = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9", "Home", "Page Up", "Delete", "End", "Page Down", "Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7", "Num8", "Num9" };
+        string[] Weapons = { "Acid Grenade ", "Advanced Trip Mines ", "Airstrike ", "Base Shield ", "Battle Axe ", "C4 ", "Crafting Hammer ", "De-Animator ", "Defibrillator ", "Diamond Keypad Cracker ", "Diamond Lockpick ", "Diamond Pickaxe ", "Door Charge ", "EMP Grenade ", "Flamethrower ", "Flash Grenade ", "Frag Grenade ", "Gamma Rifle ", "Gauss Rifle ", "GenCorp Orange Core Grenade ", "GenCorp S.C.A.N Master 5000 ", "GenCorp Spartan Laser ", "Gluon Gun ", "Golden GenCorp S.C.A.N Master 5000 ", "Golden Gluon Gun ", "HandCannon ", "Handheld Ion Cannon ", "Iridium Pickaxe ", "Jet Gun ", "K398 ", "Keypad Cracker ", "Knife ", "Laser Dagger ", "Lockpick ", "M134 Minigun ", "M202 RL ", "M303 RL ", "Magik Laser Pistol ", "Matador ", "Medi Shield ", "Minigun 2.0 ", "Molotov Coctail ", "Nerve Gas ", "Ninja Stars ", "Nitro Glycerine ", "Orbital Strike ", "PSG-1 ", "Pickaxe ", "Portable EMP ", "Printer Booster ", "Printer Booster x3 ", "Printer Booster x4 ", "Printer Hacker 2 ", "Printer Hacker ", "Proximity Mine ", "RPG-7 ", "Radiation Shiled ", "Riot Shield ", "SLAM ", "Smoke Grenade ", "Tactical Insertion ", "Thermal Detonator ", "Thunder Hammer ", "Thundergun (T-Gun) " };
+        string[] WepBinds = {"mm_acidflask", "weapon_advancedtripmine", "airstrike", "weapon_baseshield5000", "mm_battleaxe", "m9k_suicide_bomb", "hammer", "mm_deanimator", "weapon_defib", "diamondcracker", "diamondlockpick", "pickaxediamond", "m9k_doorcharge", "m9k_emp_grenade", "mm_flamethrower", "weapon_real_cs_flash", "weapon_real_cs_grenade", "weapon_gammashooter", "weapon_gauss_rifle", "m9k_orangecore_grenade", "weapon_scanmaster5000", "weapon_spartanlaser", "weapon_gluongun", "weapon_scanmaster5000_golden", "weapon_gluongun_golden", "weapon_hand_cannon", "weapon_ioncannon", "pickaxeiridium", "weapon_jetgun", "weapon_k398", "cracker", "m9k_knife", "m9k_laserdagger", "lockpick", "m9k_minigun", "m9k_m202", "m9k_m303", "weapon_laserpistol2", "m9k_matador", "weapon_medishield", "weapon_minigun2", "molotov_cocktail", "m9k_nerve_gas", "weapon_ninjastars", "m9k_nitro", "m9k_orbital_strike", "m9k_psg1", "pickaxe", "weapon_portableemp", "printer_booster", "printer_boostertriple", "printer_boosterquad", "weapon_printerhacker2", "weapon_printerhacker", "m9k_proxy_mine", "m9k_rpg7", "weapon_radiationshield", "riot_shield", "weapon_slam", "weapon_real_cs_smoke", "weapon_tacticalinsertion", "weapon_detonator", "weapon_thunderhammer", "weapon_hoff_thundergun"};
+        string[] Suits = {"Advanced Combat Suit", "Nano Suit", "Hyper Suit", "Juggernaut Suit", "Golden Juggernaut Suit", "Visor Suit", "Holo Suit", "Portal Suit", "Mummy Suit", "EDF Suit", "Golden Nano Suit", "Golden ACS"};
+        string[] SuitBinds = { "advanced combat suit", "nano suit", "hyper suit", "gencorp juggernaut suit", "golden juggernaut suit", "visor suit", "holo pilot suit", "portal suit", "mummy suit", "edf police heavy armor suit", "golden nano suit", "golden advanced combat suit" };
+        string[] PoliceBinds = { "say /me Weapon Check! Restisting = AOS/KOS", "zarp_equipitem edf police heavy armor suit", "say /votecp", "say /voteprisonguard", "say /voteswat", "say /fbi", "say /security", "say /votesasmember" };
+        string[] StaffBinds = { "say /teleport", "say /backspawn", "say /tptopos -1966,-5721,121", "say /tptopos -274,-2361,60", "say /back", "noclip", "say /cloak", "say /uncloak" };
+        string[] TTTBinds = { "ttt_radio imwith", "ttt_radio suspect", "ttt_radio traitor", "ttt_radio innocent", "ttt_radio see", "ttt_radio check", "ulx noclip", "ulx fspec @", "ulx bring @", "xgui" };
+        public Form8()
+        {
+            InitializeComponent();
+            panel2.BackColor = ColorTranslator.FromHtml("#111111");
+            textBox2.BackColor = ColorTranslator.FromHtml("#111111");
+            comboBox1.BackColor = ColorTranslator.FromHtml("#111111");
+            comboBox2.BackColor = ColorTranslator.FromHtml("#111111");
+            textBox1.BackColor = ColorTranslator.FromHtml("#111111");
+            comboBox4.BackColor = ColorTranslator.FromHtml("#111111");
+            comboBox3.BackColor = ColorTranslator.FromHtml("#111111");
+            comboBox5.BackColor = ColorTranslator.FromHtml("#111111");
+            comboBox6.BackColor = ColorTranslator.FromHtml("#111111");
+            textBox3.BackColor = ColorTranslator.FromHtml("#111111");
+            comboBox7.BackColor = ColorTranslator.FromHtml("#111111");
+            comboBox8.BackColor = ColorTranslator.FromHtml("#111111");
+            textBox4.BackColor = ColorTranslator.FromHtml("#111111");
+            comboBox9.BackColor = ColorTranslator.FromHtml("#111111");
+            comboBox10.BackColor = ColorTranslator.FromHtml("#111111");
+            textBox5.BackColor = ColorTranslator.FromHtml("#111111");
+            comboBox11.BackColor = ColorTranslator.FromHtml("#111111");
+            comboBox12.BackColor = ColorTranslator.FromHtml("#111111");
+            textBox6.BackColor = ColorTranslator.FromHtml("#111111");
+            this.BackColor = ColorTranslator.FromHtml("#1A1A1B");
+            Form5 frm = (Form5)Application.OpenForms["Form5"];
+            button1.ForeColor = frm.themecolor2;
+            button2.ForeColor = frm.themecolor2;
+            button3.ForeColor = frm.themecolor2;
+            button4.ForeColor = frm.themecolor2;
+            button5.ForeColor = frm.themecolor2;
+            button6.ForeColor = frm.themecolor2;
+            button7.ForeColor = frm.themecolor2;
+            button8.ForeColor = frm.themecolor2;
+            button9.ForeColor = frm.themecolor2;
+            button10.ForeColor = frm.themecolor2;
+            button11.ForeColor = frm.themecolor2;
+            button12.ForeColor = frm.themecolor2;
+            button13.ForeColor = frm.themecolor2;
+            button14.ForeColor = frm.themecolor2;
+            button15.ForeColor = frm.themecolor2;
+            button16.ForeColor = frm.themecolor2;
+            button17.ForeColor = frm.themecolor2;
+            button18.ForeColor = frm.themecolor2;
+            button19.ForeColor = frm.themecolor2;
+            label1.ForeColor = frm.themecolor2;
+            label2.ForeColor = frm.themecolor2;
+            label3.ForeColor = frm.themecolor2;
+            label4.ForeColor = frm.themecolor2;
+            label5.ForeColor = frm.themecolor2;
+            label6.ForeColor = frm.themecolor2;
+            label7.ForeColor = frm.themecolor2;
+            label8.ForeColor = frm.themecolor2;
+            label9.ForeColor = frm.themecolor2;
+            label10.ForeColor = frm.themecolor2;
+            label11.ForeColor = frm.themecolor2;
+            label12.ForeColor = frm.themecolor2;
+            label13.ForeColor = frm.themecolor2;
+            label14.ForeColor = frm.themecolor2;
+            label15.ForeColor = frm.themecolor2;
+            label16.ForeColor = frm.themecolor2;
+            label17.ForeColor = frm.themecolor2;
+            label18.ForeColor = frm.themecolor2;
+            label19.ForeColor = frm.themecolor2;
+            label20.ForeColor = frm.themecolor2;
+            comboBox1.ForeColor = frm.themecolor2;
+            comboBox2.ForeColor = frm.themecolor2;
+            comboBox3.ForeColor = frm.themecolor2;
+            comboBox4.ForeColor = frm.themecolor2;
+            comboBox5.ForeColor = frm.themecolor2;
+            comboBox6.ForeColor = frm.themecolor2;
+            comboBox7.ForeColor = frm.themecolor2;
+            comboBox8.ForeColor = frm.themecolor2;
+            comboBox9.ForeColor = frm.themecolor2;
+            comboBox10.ForeColor = frm.themecolor2;
+            comboBox11.ForeColor = frm.themecolor2;
+            comboBox12.ForeColor = frm.themecolor2;
+            if (frm.theme == "green")
+            {
+                pictureBox3.Image = Image.FromFile("xx.png");
+            }
+            else if (frm.theme == "bb00bb")
+            {
+                pictureBox3.Image = Image.FromFile("x_bb00bb.png");
+            }
+
+            for (int i = 0; i < Weapons.Length; i++)
+            {
+                comboBox1.Items.Add(Weapons[i]);
+            }
+            for (int i = 0; i < Keys.Length; i++)
+            {
+                comboBox2.Items.Add(Keys[i]);
+                comboBox3.Items.Add(Keys[i]);
+                comboBox7.Items.Add(Keys[i]);
+                comboBox9.Items.Add(Keys[i]);
+                comboBox11.Items.Add(Keys[i]);
+            }
+            for (int i = 0; i < Suits.Length; i++)
+            {
+                comboBox4.Items.Add(Suits[i]);
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label1.Focus();
+        }
+
+        private void comboBox1_DropDownClosed(object sender, EventArgs e)
+        {
+            label1.Focus();
+        }
+
+        private void comboBox2_DropDownClosed(object sender, EventArgs e)
+        {
+            label1.Focus();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedIndex < 36 & !string.IsNullOrEmpty(comboBox2.Text) & !string.IsNullOrEmpty(comboBox1.Text))
+            {
+                string bind = "bind " + comboBox2.Text + " \"zarp_equipitem " + WepBinds[comboBox1.SelectedIndex] + "\"";
+                textBox2.Text = bind;
+            }
+            else if (!(comboBox2.SelectedIndex < 36) & !string.IsNullOrEmpty(comboBox2.Text) & !string.IsNullOrEmpty(comboBox1.Text))
+            {
+                string bind = "bind " + numpad[comboBox2.SelectedIndex-36] + " \"zarp_equipitem " + WepBinds[comboBox1.SelectedIndex] + "\"";
+                textBox2.Text = bind;
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(textBox2.Text);
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            panel4.Visible = false;
+            panel1.Visible = true;
+            panel5.Visible = false;
+            panel7.Visible = false;
+            panel6.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = true;
+            panel4.Visible = false;
+            panel7.Visible = false;
+            panel6.Visible = false;
+            panel1.Visible = false;
+            panel5.Visible = false;
+        }
+
+        private void comboBox3_DropDownClosed(object sender, EventArgs e)
+        {
+            label4.Focus();
+        }
+
+        private void comboBox4_DropDownClosed(object sender, EventArgs e)
+        {
+            label4.Focus();
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label4.Focus();
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label4.Focus();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if (comboBox3.SelectedIndex < 36 & !string.IsNullOrEmpty(comboBox3.Text) & !string.IsNullOrEmpty(comboBox4.Text))
+            {
+                string bind = "bind " + comboBox3.Text + " \"zarp_equipitem " + SuitBinds[comboBox4.SelectedIndex] + "\"";
+                textBox1.Text = bind;
+            }
+            else if (!(comboBox3.SelectedIndex < 36) & !string.IsNullOrEmpty(comboBox3.Text) & !string.IsNullOrEmpty(comboBox4.Text))
+            {
+                string bind = "bind " + numpad[comboBox3.SelectedIndex - 36] + " \"zarp_equipitem " + SuitBinds[comboBox4.SelectedIndex] + "\"";
+                textBox1.Text = bind;
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(textBox1.Text);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            panel4.Visible = true;
+            panel1.Visible = false;
+            panel5.Visible = false;
+            panel6.Visible = false;
+            panel7.Visible = false;
+        }
+
+        private void comboBox6_DropDownClosed(object sender, EventArgs e)
+        {
+            label4.Focus();
+        }
+
+        private void comboBox5_DropDownClosed(object sender, EventArgs e)
+        {
+            label4.Focus();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            string bind = "bind mouse1 \"_inven gems " + comboBox5.Text + " " + (comboBox6.SelectedIndex + 1) + "; +attack\"";
+            textBox3.Text = bind;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(textBox3.Text);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            panel5.Visible = true;
+            panel3.Visible = false;
+            panel4.Visible = false;
+            panel1.Visible = false;
+            panel6.Visible = false;
+            panel7.Visible = false;
+        }
+
+        private void comboBox7_DropDownClosed(object sender, EventArgs e)
+        {
+            label4.Focus();
+        }
+
+        private void comboBox8_DropDownClosed(object sender, EventArgs e)
+        {
+            label4.Focus();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            if (comboBox7.SelectedIndex < 36 & !string.IsNullOrEmpty(comboBox7.Text) & !string.IsNullOrEmpty(comboBox8.Text))
+            {
+                string bind = "bind " + comboBox7.Text + " \"" + PoliceBinds[comboBox8.SelectedIndex] + "\"";
+                textBox4.Text = bind;
+            }
+            else if (!(comboBox7.SelectedIndex < 36) & !string.IsNullOrEmpty(comboBox7.Text) & !string.IsNullOrEmpty(comboBox8.Text))
+            {
+                string bind = "bind " + numpad[comboBox7.SelectedIndex - 36] + " \"" + PoliceBinds[comboBox8.SelectedIndex] + "\"";
+                textBox4.Text = bind;
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(textBox4.Text);
+        }
+
+        private void comboBox9_DropDownClosed(object sender, EventArgs e)
+        {
+            label4.Focus();
+        }
+
+        private void comboBox10_DropDownClosed(object sender, EventArgs e)
+        {
+            label4.Focus();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            panel5.Visible = false;
+            panel3.Visible = false;
+            panel4.Visible = false;
+            panel1.Visible = false;
+            panel7.Visible = false;
+            panel6.Visible = true;
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            if (comboBox9.SelectedIndex < 36 & !string.IsNullOrEmpty(comboBox9.Text) & !string.IsNullOrEmpty(comboBox10.Text))
+            {
+                string bind = "bind " + comboBox9.Text + " \"" + StaffBinds[comboBox10.SelectedIndex] + "\"";
+                textBox5.Text = bind;
+            }
+            else if (!(comboBox9.SelectedIndex < 36) & !string.IsNullOrEmpty(comboBox9.Text) & !string.IsNullOrEmpty(comboBox10.Text))
+            {
+                string bind = "bind " + numpad[comboBox9.SelectedIndex - 36] + " \"" + StaffBinds[comboBox10.SelectedIndex] + "\"";
+                textBox5.Text = bind;
+            }
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(textBox5.Text);
+        }
+
+        private void comboBox11_DropDownClosed(object sender, EventArgs e)
+        {
+            label4.Focus();
+        }
+
+        private void comboBox12_DropDownClosed(object sender, EventArgs e)
+        {
+            label4.Focus();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            panel5.Visible = false;
+            panel3.Visible = false;
+            panel4.Visible = false;
+            panel1.Visible = false;
+            panel6.Visible = false;
+            panel7.Visible = true;
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            if (comboBox11.SelectedIndex < 36 & !string.IsNullOrEmpty(comboBox11.Text) & !string.IsNullOrEmpty(comboBox12.Text))
+            {
+                string bind = "bind " + comboBox11.Text + " \"" + TTTBinds[comboBox12.SelectedIndex] + "\"";
+                textBox6.Text = bind;
+            }
+            else if (!(comboBox11.SelectedIndex < 36) & !string.IsNullOrEmpty(comboBox11.Text) & !string.IsNullOrEmpty(comboBox12.Text))
+            {
+                string bind = "bind " + numpad[comboBox11.SelectedIndex - 36] + " \"" + TTTBinds[comboBox12.SelectedIndex] + "\"";
+                textBox6.Text = bind;
+            }
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(textBox6.Text);
+        }
+    }
+}
